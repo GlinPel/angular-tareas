@@ -1,0 +1,23 @@
+<div class="card">
+    <h2 class="title">Registrate</h2>
+    <p class="subtitle">¿Ya tienes una cuenta? <a [routerLink]="['/auth/login']">Inicia Sesión</a></p>
+    <form (ngSubmit)="submitRegister(registerForm.value)" #registerForm="ngForm">
+       <div class="email-login">
+          <span *ngIf="errorCamposVacios" class="errorLogin">Los campos son obligatorios</span>
+          <span *ngIf="errorCoincidencia" class="errorLogin">Las contraseñas no coinciden</span>
+          <span *ngIf="errorEmail" class="errorLogin">El email no es valido</span>
+          <span *ngIf="errorExiste" class="errorLogin">Ese email ya está registrado</span>
+          <label for="userName"><b>Nombre de usuario</b></label>
+          <input type="text" placeholder="Ingresa tu nombre de usuario" name="userName" required ngModel>
+          <label for="email"> <b>Email</b></label>
+          <input type="email" placeholder="Ingresa tu email" name="email" required ngModel>
+          <label for="password"><b>Contraseña</b></label>
+          <input type="password" placeholder="Ingresa tu password" name="password" required ngModel>
+          <label for="password2"><b>Repite la contraseña</b></label>
+          <input type="password" placeholder="Repite tu password" name="password2" required ngModel>
+       </div>
+       <button class="cta-btn"
+       >Registrarse</button>
+       <!-- <a class="forget-pass" href="#">Forgot password?</a> -->
+    </form>
+ </div>

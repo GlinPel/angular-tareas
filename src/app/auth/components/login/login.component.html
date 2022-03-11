@@ -1,0 +1,17 @@
+<div class="card">
+    <h2 class="title">Inicia sesión</h2>
+    <p class="subtitle">¿Aún no tienes cuenta? <a [routerLink]="['/auth/registro']">Registrate</a></p>
+    <form (ngSubmit)="submitLogin(loginForm.value)" #loginForm="ngForm">
+       <div class="email-login">
+          <span *ngIf="errorLogin" class="errorLogin">Email o contraseña incorrecto</span>
+          <span *ngIf="errorCamposVacios" class="errorLogin">Los campos son obligatorios</span>
+          <label for="email"> <b>Email</b></label>
+          <input type="email" placeholder="Ingresa tu email" name="email" required ngModel>
+          <label for="password"><b>Contraseña</b></label>
+          <input type="password" placeholder="Ingresa tu password" name="password" required ngModel>
+       </div>
+       <button class="cta-btn"
+       >Iniciar sesión</button>
+       <!-- <a class="forget-pass" href="#">Forgot password?</a> -->
+    </form>
+ </div>

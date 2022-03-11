@@ -1,0 +1,12 @@
+<header class="header">
+  <button (click)="logout()" class="btn-logout">Salir</button>
+  <h1>Tareas de {{user}}</h1>
+  <input
+    class="new-todo"
+    placeholder="¿Qué tarea nueva hay?"
+    autoFocus
+    [value]="text"
+    (keyup)="changeText($event)"
+    (keyup.enter)="addTodo()"
+  />
+</header>
